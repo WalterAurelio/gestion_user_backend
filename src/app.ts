@@ -1,9 +1,11 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import router from './routes/user.routes';
 
-const app = express();
-app.use(express.json());
+export default function(database) {
+  const app = express();
+  app.use(express.json());
 
-app.use('/api/auth', router);
+  app.use('/api/auth', router(database));
 
-export default app;
+  return app;
+}

@@ -4,8 +4,13 @@ import { registerUser } from '../controllers/user.controller';
 
 const router = Router();
 
-router.post('/register', validateRegister, registerUser);
-router.post('/login', () => {});
-router.get('/logout', () => {});
+export default function(database) {
+  router.post('/register', validateRegister, registerUser(database));
 
-export default router;
+  return router;
+}
+
+// router.post('/login', () => {});
+// router.get('/logout', () => {});
+
+// export default router;
