@@ -2,7 +2,7 @@ import z from 'zod';
 import { Request, Response, NextFunction } from 'express';
 
 const RegisterBody = z.object({
-  username: z.string().min(5),
+  username: z.string().min(4),
   password: z.string().min(4)
 });
 

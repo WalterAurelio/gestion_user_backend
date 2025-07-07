@@ -9,7 +9,6 @@ export const registerUser = (req: Request<{}, {}, RegisterBodyType>, res: Respon
       res.sendStatus(400);
       return;
     }
-
     res.json({ message: 'Usuario registrado con éxito' });
   } catch (error) {
     res.sendStatus(500);
